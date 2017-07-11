@@ -1,0 +1,30 @@
+{
+  "name": "hyper-ritalin",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel --out-dir=dist/ --copy-files --watch src/"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-regenerator": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint-config-adorable": "^0.0.5"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "babel-preset-env": "^1.6.0",
+    "m.noansi": "^1.0.1",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "redux": "^3.7.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "adorable"
+    ]
+  }
+}
