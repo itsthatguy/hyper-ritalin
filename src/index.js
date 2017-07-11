@@ -7,14 +7,15 @@ export const decorateConfig = function (config) {
     css: `
     ${config.css || ''}
     .hello {
-      background-color: blue,
-      position: absolute,
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      height: 100px,
-      width: 100px,
+      background: #000099;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
     }
     `
   });
@@ -22,10 +23,6 @@ export const decorateConfig = function (config) {
 export const decorateHyper = function (Hyper, { React }) {
 
   return class extends React.Component {
-    constructor (props) {
-      super(props);
-    }
-
     render () {
       const customChildren = (
         <div className='hello'>Hello</div>
@@ -33,7 +30,12 @@ export const decorateHyper = function (Hyper, { React }) {
 
       console.log('------------ RENDERING -------------');
 
-      return <Hyper {...this.props} customChildren={customChildren} />
+      return (
+        <div>
+          <Hyper {...this.props}/>
+          {customChildren}
+        </div>
+      )
     }
   }
 }
